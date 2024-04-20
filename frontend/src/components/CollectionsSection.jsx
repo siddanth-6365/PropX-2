@@ -1,8 +1,8 @@
-import { STATS_TABLE } from '@/consts'
+import { STATS_TABLE } from '../consts'
 import { useMemo } from 'react'
 import { Mousewheel, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import Button from './Button'
+import Button from './Button.jsx'
 import Container from './Container'
 
 const commonBiggerScreen = {
@@ -13,7 +13,7 @@ const commonBiggerScreen = {
   slidesOffsetAfter: 0,
 }
 
-export default function CollectionsSection({ title }: { title: string }) {
+export default function CollectionsSection({ title }) {
   const shuffledData = useMemo(() => {
     return STATS_TABLE.sort(() => 0.5 - Math.random())
   }, [])

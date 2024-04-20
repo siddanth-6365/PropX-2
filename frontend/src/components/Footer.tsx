@@ -1,5 +1,5 @@
 import Logo from '@/assets/logo.svg'
-import { FOOTER_COMPANY, FOOTER_LEARN, FOOTER_MARKETPLACE, FOOTER_MYACCOUNT, FOOTER_RESOURCES, FOOTER_STATS } from '@/consts'
+import { FOOTER_COMPANY, FOOTER_LEARN, FOOTER_MARKETPLACE, FOOTER_MYACCOUNT, FOOTER_RESOURCES, FOOTER_STATS } from '../consts'
 import { SocialIcon } from 'react-social-icons'
 import Container from './Container'
 

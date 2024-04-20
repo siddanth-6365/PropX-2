@@ -1,4 +1,4 @@
-import { CAROUSEL_ITEMS, MAIN_TABS } from '@/consts'
+import { CAROUSEL_ITEMS, MAIN_TABS } from '../consts'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { Autoplay, FreeMode, Mousewheel, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -25,7 +25,7 @@ export default function HeroSection() {
   )
 }
 
-function Carousel({ changeBackground }: { changeBackground: Dispatch<SetStateAction<number>> }) {
+function Carousel({ changeBackground }) {
   return (
     <div className="pt-8">
       <Swiper

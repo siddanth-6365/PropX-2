@@ -1,8 +1,8 @@
-import { STATS_TABLE } from '@/consts'
-import { HTMLAttributes, ReactNode } from 'react'
-import { twMerge } from 'tailwind-merge'
-import Button from './Button'
-import Container from './Container'
+import { STATS_TABLE } from "../consts";
+import { HTMLAttributes, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
+import Button from "./Button";
+import Container from "./Container";
 
 export default function StatsTable() {
   return (
@@ -10,10 +10,14 @@ export default function StatsTable() {
       <div className="flex justify-between border-b">
         <ul className="mt-auto flex gap-x-8 font-poppins  text-base font-semibold lg:text-2xl">
           <li>
-            <button className="border-b-2 border-slate-900 pb-4 text-slate-900">Trending</button>
+            <button className="border-b-2 border-slate-900 pb-4 text-slate-900">
+              Trending
+            </button>
           </li>
           <li>
-            <button className="pb-4 transition-colors duration-300 hover:text-slate-900">Top</button>
+            <button className="pb-4 transition-colors duration-300 hover:text-slate-900">
+              Top
+            </button>
           </li>
         </ul>
         <div className="flex gap-x-2 pb-2 lg:gap-x-4">
@@ -33,10 +37,10 @@ export default function StatsTable() {
         </div>
       </div>
     </Container>
-  )
+  );
 }
 
-function StatTable({ data, indexStart }: { data: typeof STATS_TABLE; indexStart: number }) {
+function StatTable({ data, indexStart }) {
   return (
     <table className="w-full flex-1 whitespace-nowrap">
       <thead>
@@ -49,17 +53,24 @@ function StatTable({ data, indexStart }: { data: typeof STATS_TABLE; indexStart:
       </thead>
       <tbody className="text-left text-sm font-semibold text-black md:text-base">
         {data.map((item, i) => (
-          <tr className="cursor-pointer hover:bg-slate-100 [&>td]:px-4 [&>td]:py-3 first:[&>td]:pl-2" key={i + indexStart}>
+          <tr
+            className="cursor-pointer hover:bg-slate-100 [&>td]:px-4 [&>td]:py-3 first:[&>td]:pl-2"
+            key={i + indexStart}
+          >
             <td className="w-1">{i + indexStart}</td>
             <td>
               <div className="flex items-center gap-x-3 pr-6 md:gap-x-6">
                 <div className="relative aspect-square w-14 overflow-hidden rounded-xl border lg:w-[4.25rem]">
-                  <img src={`/carousel/${item.image}`} className="absolute inset-0 h-full w-full object-cover object-center" />
+                  <img
+                    src={`/carousel/${item.image}`}
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                  />
                 </div>
                 <div>
                   <p>{item.name}</p>
                   <p className="text-xs font-normal text-slate-500 md:hidden">
-                    Floor: <span className="font-semibold">{item.floor} ETH</span>
+                    Floor:{" "}
+                    <span className="font-semibold">{item.floor} ETH</span>
                   </p>
                 </div>
               </div>
@@ -70,19 +81,18 @@ function StatTable({ data, indexStart }: { data: typeof STATS_TABLE; indexStart:
         ))}
       </tbody>
     </table>
-  )
+  );
 }
 
-function DurationButton({
-  children,
-  className,
-}: {
-  children: ReactNode
-  className?: HTMLAttributes<HTMLButtonElement>['className']
-}) {
+function DurationButton({ children, className }) {
   return (
-    <button className={twMerge('h-fit border-y px-3 py-2 text-sm font-semibold lg:px-4 lg:py-3 lg:text-base', className)}>
+    <button
+      className={twMerge(
+        "h-fit border-y px-3 py-2 text-sm font-semibold lg:px-4 lg:py-3 lg:text-base",
+        className
+      )}
+    >
       {children}
     </button>
-  )
+  );
 }
